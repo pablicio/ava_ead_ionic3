@@ -1,4 +1,4 @@
-# Equipe Lado Negro
+# PLATAFORMA EDUCACIONAL
 
 Projeto AVA - EAD
 
