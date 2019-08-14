@@ -1,0 +1,77 @@
+<ion-content padding class="animated fadeIn login auth-page">
+  
+  <div class="login-content">
+
+    <!-- Logo -->
+    <div padding-horizontal text-center class="animated fadeInDown" style="-webkit-animation: fadeInDown 3s;
+    animation: fadeInDown 3s;" >
+    
+      <a href="http://stackoverflow.com" class="animated fadeInDown" style="-webkit-animation: fadeInDown 3s;
+    animation: fadeInDown 3s;" >
+        <img class="animated fadeInDown" style=" -webkit-animation: fadeInDown 3s;
+    animation: fadeInDown 3s; width: 70%" id="imgLogo" src="../../assets/img/c2.png" alt="Stack Overflow" />
+      </a>
+    
+    </div>
+
+    <div style="text-align: center;">
+      <h2 ion-text class="text-primary">
+        <strong>UniCursos</strong>
+      </h2>
+      <h4>
+        Plataforma Educativa
+      </h4>
+    </div>
+
+    <!-- Login form -->
+    <form class="list-form">
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="mail" item-start class="text-primary"></ion-icon>
+          Email
+        </ion-label>
+        <ion-input type="email"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>
+          <ion-icon name="lock" item-start class="text-primary"></ion-icon>
+          Senha
+        </ion-label>
+        <ion-input type="password"></ion-input>
+      </ion-item>
+
+      <!-- <ion-item>
+        <ion-input type="text" name="cpf" placeholder="CPF" [brmasker]="{mask:'000.000.000-00', len:14}"></ion-input>
+      </ion-item> -->
+    </form> 
+
+    <p text-right ion-text color="secondary" tappable (click)="forgotPass()"><strong>Esqueceu a senha?</strong></p>
+
+    <div>
+      <button style="width: 46%; left: 86px; border-radius: 50px 15px;" ion-button icon-start block color="dark" tappable (click)="login()">
+        <ion-icon name="log-in"></ion-icon>
+        Entrar
+      </button>
+
+      <p style="text-align: center">entrar com:</p>
+
+      <ion-grid style="width: 50%;">
+       
+          
+            <button style="border-radius: 15px 50px;" ion-button icon-only block class="btn-gplus">
+              <ion-icon name="logo-google"></ion-icon>
+            </button>
+         
+      </ion-grid>
+
+    </div>
+
+
+    <!-- Other links -->
+    <div text-center margin-top>
+      <span ion-text color="secondary" tappable (click)="register()">Não é registrado? <strong>Registre-se</strong></span>
+    </div>
+
+  </div>
+</ion-content>

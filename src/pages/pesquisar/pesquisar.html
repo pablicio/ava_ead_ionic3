@@ -1,0 +1,63 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-searchbar #searchbar placeholder="Pesquisar todos os cursos" [showCancelButton]="true" (input)="onSearch($event)"
+      (ionCancel)="onCancelSearch()" (ionClear)="onClear()" [class.searchbar-search-icon]="(!showCategorias) ? '/assets/svg/search.svg' : '/assets/svg/arrow-back.svg'">
+    </ion-searchbar>
+    <ion-buttons end *ngIf="!showCategorias">
+      <button ion-button icon-only (click)='showOptions()'>
+        <ion-icon name="funnel"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="animated fadeIn">
+
+  <ion-card *ngIf="showCategorias">
+
+    <ion-card-content>
+
+      <ion-list>
+        <ion-item *ngFor="let item of categorias" no-lines (click)='showCursosByCategoria(item)'>
+          <ion-icon [name]="item.icon" item-start></ion-icon>
+          <ion-label>{{ item.title }}</ion-label>
+        </ion-item>
+      </ion-list>
+
+    </ion-card-content>
+
+  </ion-card>
+
+  <div *ngIf="searching" class="spinner-container" style="text-align: center;margin-top: 16px;margin-bottom: 16px;">
+    <ion-spinner></ion-spinner>
+  </div>
+
+  <ion-list *ngIf="!showCategorias" class="animated fadeIn">
+
+    <ion-item *ngFor="let item of cursos">
+
+      <ion-thumbnail item-start>
+        <img [src]="'assets/img/cursos/' + item.image + '.jpg'">
+      </ion-thumbnail>
+
+      <ion-label>
+
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.instructor }}</p>
+
+        <!-- progressbar -->
+        <progress-bar [value]="item.progress"></progress-bar>
+
+        <p>{{ item.progress + "% concluído" }}</p>
+
+      </ion-label>
+
+    </ion-item>
+
+    <h5 *ngIf="this.cursos.length == 0" style="text-align: center;">
+      <ion-icon name="search"></ion-icon> Sem resultados
+    </h5>
+
+  </ion-list>
+
+</ion-content>

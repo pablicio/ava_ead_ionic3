@@ -1,0 +1,33 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Meus Cursos</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content class="animated fadeIn">
+
+  <ion-list>
+
+    <ion-item *ngFor="let item of cursos" (click)="goToAula()">
+
+      <ion-thumbnail item-start>
+        <img [src]="'assets/img/cursos/' + item.image + '.jpg'">
+      </ion-thumbnail>
+
+      <ion-label>
+
+        <h2>{{ item.title }}</h2>
+        <p>{{ item.instructor }}</p>
+
+        <!-- progressbar -->
+        <progress-bar [value]="item.progress"></progress-bar>
+
+        <p>{{ item.progress + "% concluído" }}</p>
+
+      </ion-label>
+
+    </ion-item>
+
+  </ion-list>
+
+</ion-content>

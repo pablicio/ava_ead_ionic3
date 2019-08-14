@@ -1,0 +1,85 @@
+<ion-header>
+  <ion-toolbar color="primary">
+    <ion-title>Cursos ({{ cursos ? cursos.length : 0 }})</ion-title>
+    <ion-buttons end *ngIf="!showCategorias">
+      <button ion-button icon-only (click)='close()'>
+        <ion-icon name="close"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="animated fadeIn">
+
+  <ion-list>
+
+    <ion-item>
+      <ion-label>Ordenar por</ion-label>
+      <ion-select interface="popover">
+        <ion-option>Popularidade</ion-option>
+        <ion-option>Número de alunos</ion-option>
+        <ion-option>Tendência</ion-option>
+      </ion-select>
+    </ion-item>
+
+    <ion-list radio-group>
+      <ion-list-header>
+        <strong>Nível</strong>
+      </ion-list-header>
+
+      <ion-item>
+        <ion-label color="dark">Todos os níveis</ion-label>
+        <ion-radio value="always"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label color="dark">Iniciante</ion-label>
+        <ion-radio value="locked"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label color="dark">Intermediário</ion-label>
+        <ion-radio value="locked"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label color="dark">Especialista</ion-label>
+        <ion-radio value="locked"></ion-radio>
+      </ion-item>
+    </ion-list>
+
+    <ion-list radio-group>
+        <ion-list-header>
+          <strong>Avaliações</strong>
+        </ion-list-header>
+  
+        <ion-item>
+          <ion-label color="dark">4,5 e acima</ion-label>
+          <ion-radio value="always"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label color="dark">4,0 e acima</ion-label>
+          <ion-radio value="locked"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label color="dark">3,5 e acima</ion-label>
+          <ion-radio value="locked"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label color="dark">3,0 e acima</ion-label>
+          <ion-radio value="locked"></ion-radio>
+        </ion-item>
+      </ion-list>
+
+  </ion-list>
+
+</ion-content>
+
+<ion-footer>
+    <ion-toolbar>
+        <div class="datepicker-actions">
+    
+          <button ion-button clear (click)='close()'>REDEFINIR</button>
+    
+          <button ion-button clear (click)='close()'>APLICAR FILTROS</button>
+    
+        </div>
+      </ion-toolbar>
+</ion-footer> 
